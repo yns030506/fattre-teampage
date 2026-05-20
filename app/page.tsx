@@ -74,7 +74,27 @@ const workspaces = ["GitHub", "Figma", "Discord", "Swagger", "Playstore / Appsto
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-50 font-sans">
-      {/* placeholder — sections will be added incrementally */}
+      {/* Hero */}
+      <section className="flex flex-col items-center justify-center min-h-screen text-center px-6">
+        <p className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-6">
+          SW마에스트로 17기
+        </p>
+        <h1 className="text-8xl md:text-9xl font-bold tracking-tight mb-6">Fattre</h1>
+        <p className="text-xl italic text-zinc-400 dark:text-zinc-500 mb-5">
+          &ldquo;Fatto trenta, facciamo trentatré&rdquo;
+        </p>
+        <p className="text-base font-semibold text-zinc-600 dark:text-zinc-300 mb-3">
+          파트레: 30을 넘어 33까지, 끝장을 보는 3인.
+        </p>
+        <p className="max-w-sm text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+          <span className="font-semibold text-zinc-700 dark:text-zinc-300">해냈다(Fatto)</span>와{" "}
+          <span className="font-semibold text-zinc-700 dark:text-zinc-300">셋(Tre)</span>을 합쳐
+          의미를 더했습니다. 중도 하차 없이 비즈니스의 완성 그 이상을 향해 달립니다.
+        </p>
+        <div className="mt-16 text-zinc-300 dark:text-zinc-700 text-2xl animate-bounce select-none">
+          ↓
+        </div>
+      </section>
     </div>
   );
 }
