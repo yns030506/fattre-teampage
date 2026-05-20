@@ -196,6 +196,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Personal Info */}
+      <section className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-4">
+            Contact
+          </p>
+          <h2 className="text-3xl font-bold mb-12">Personal Info</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-zinc-200 dark:border-zinc-700">
+                  <th className="text-left py-3 pr-8 font-semibold text-zinc-400 dark:text-zinc-500">이름</th>
+                  <th className="text-left py-3 pr-8 font-semibold text-zinc-400 dark:text-zinc-500">Email</th>
+                  <th className="text-left py-3 pr-8 font-semibold text-zinc-400 dark:text-zinc-500">Phone</th>
+                  <th className="text-left py-3 font-semibold text-zinc-400 dark:text-zinc-500">GitHub</th>
+                </tr>
+              </thead>
+              <tbody>
+                {members.map((m) => (
+                  <tr
+                    key={m.name}
+                    className="border-b border-zinc-100 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+                  >
+                    <td className="py-4 pr-8 font-medium">{m.name}</td>
+                    <td className="py-4 pr-8 text-zinc-500 dark:text-zinc-400">{m.email}</td>
+                    <td className="py-4 pr-8 text-zinc-500 dark:text-zinc-400 tabular-nums">{m.phone}</td>
+                    <td className="py-4">
+                      <a
+                        href={m.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-mono text-emerald-600 dark:text-emerald-400 hover:underline"
+                      >
+                        @{m.github}
+                      </a>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
