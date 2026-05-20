@@ -5,7 +5,7 @@ const members = [
   {
     name: "방현우",
     role: "Back-end",
-    photo: "/방현우_증명사진.jpeg",
+    photo: "/hyunwoo.jpeg",
     notion: "https://www.notion.so/34da01badc218035a115e75b0d06b9c6?pvs=21",
     email: "brandon55321@gmail.com",
     phone: "010-5532-8664",
@@ -15,7 +15,7 @@ const members = [
   {
     name: "서예진",
     role: "Front-end",
-    photo: "/서예진_증명사진.png",
+    photo: "/yejin.png",
     notion: "https://www.notion.so/34ca01badc2180aa8552d545478ef1b0?pvs=21",
     email: "noonesyj@naver.com",
     phone: "010-4512-8172",
@@ -25,7 +25,7 @@ const members = [
   {
     name: "양나슬",
     role: "AI",
-    photo: "/양나슬_증명사진.jpeg",
+    photo: "/naseul.jpeg",
     notion: "https://www.notion.so/34ca01badc2180cc845afa1ec378efc9?pvs=21",
     email: "yns030506@uos.ac.kr",
     phone: "010-4557-3933",
