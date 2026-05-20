@@ -158,6 +158,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Lineup */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-4">
+            Team
+          </p>
+          <h2 className="text-3xl font-bold mb-16">Lineup</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {members.map((m) => (
+              <div key={m.name} className="flex flex-col items-center text-center gap-5">
+                <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-zinc-100 dark:border-zinc-800 shrink-0">
+                  <Image
+                    src={m.photo}
+                    alt={`${m.name} 증명사진`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div>
+                  <p className="text-xl font-bold">{m.name}</p>
+                  <span className="inline-block mt-2 px-3 py-0.5 text-xs font-semibold rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">
+                    {m.role}
+                  </span>
+                </div>
+                <a
+                  href={m.notion}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 transition-colors"
+                >
+                  Notion 소개 →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
