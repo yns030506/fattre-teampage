@@ -240,6 +240,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Workspace */}
+      <section className="py-24 px-6">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-4">
+            Links
+          </p>
+          <h2 className="text-3xl font-bold mb-12">
+            Workspace{" "}
+            <span className="text-lg font-normal text-zinc-400 dark:text-zinc-500">(Coming soon..)</span>
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-zinc-200 dark:border-zinc-700">
+                  <th className="text-left py-3 pr-8 font-semibold text-zinc-400 dark:text-zinc-500">이름</th>
+                  <th className="text-left py-3 pr-8 font-semibold text-zinc-400 dark:text-zinc-500">주소</th>
+                  <th className="text-left py-3 font-semibold text-zinc-400 dark:text-zinc-500">비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                {workspaces.map((name) => (
+                  <tr key={name} className="border-b border-zinc-100 dark:border-zinc-800">
+                    <td className="py-4 pr-8 font-medium">{name}</td>
+                    <td className="py-4 pr-8 text-zinc-300 dark:text-zinc-600 italic">Coming soon...</td>
+                    <td className="py-4 text-zinc-300 dark:text-zinc-600">—</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-8 px-6 border-t border-zinc-100 dark:border-zinc-800 text-center text-xs text-zinc-300 dark:text-zinc-600">
+        © 2025 Fattre · SW마에스트로 17기
+      </footer>
     </div>
   );
 }
