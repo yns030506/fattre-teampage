@@ -95,6 +95,69 @@ export default function Home() {
           ↓
         </div>
       </section>
+
+      {/* Team Introduction */}
+      <section className="py-24 px-6 bg-zinc-50 dark:bg-zinc-900">
+        <div className="max-w-5xl mx-auto">
+          <p className="text-xs font-semibold tracking-widest text-emerald-600 dark:text-emerald-400 uppercase mb-4">
+            Team Introduction
+          </p>
+          <h2 className="text-3xl font-bold mb-16">
+            아이디어를 서비스로,
+            <br />
+            가능성을 결과로
+          </h2>
+
+          {/* Goals */}
+          <div className="mb-14">
+            <h3 className="text-sm font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-8">
+              목표 &amp; 방향성
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+              {goals.map((g) => (
+                <div
+                  key={g.number}
+                  className="bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700"
+                >
+                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">
+                    {g.number}
+                  </span>
+                  <h4 className="text-base font-bold mt-2 mb-3">{g.title}</h4>
+                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{g.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Strengths */}
+          <div>
+            <h3 className="text-sm font-semibold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest mb-8">
+              강점 &amp; 의지
+            </h3>
+            <div className="space-y-4">
+              {strengths.map((s) => (
+                <div
+                  key={s.number}
+                  className="flex gap-6 bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700"
+                >
+                  <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 shrink-0 leading-none pt-1">
+                    {s.number}
+                  </span>
+                  <div>
+                    <h4 className="font-bold mb-2">{s.title}</h4>
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed border-l-2 border-emerald-500 pl-4">
+              시작부터 끝까지 흩어지지 않고, 하루 종일 같은 공간에서 온전히 하나의 목표만 바라볼 수
+              있는 팀입니다. 저희의 단단한 결속력과 실행력 위에 멘토님의 경험과 방향성이 더해진다면,
+              실제 시장에서 의미 있는 성과를 내는 프로덕트를 만들어낼 수 있다고 믿습니다.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
