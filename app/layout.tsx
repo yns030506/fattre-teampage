@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Fattre | Team Page",
   description: "SW마에스트로 17기 팀 Fattre — 30을 넘어 33까지, 끝장을 보는 3인.",
+  openGraph: {
+    images: [{ url: "/bee_image.jpg" }],
+  },
 };
 
 export default function RootLayout({
