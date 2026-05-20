@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FadeIn from "./components/FadeIn";
 
 const members = [
   {
@@ -114,17 +115,16 @@ export default function Home() {
               목표 &amp; 방향성
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {goals.map((g) => (
-                <div
-                  key={g.number}
-                  className="bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700"
-                >
-                  <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">
-                    {g.number}
-                  </span>
-                  <h4 className="text-base font-bold mt-2 mb-3">{g.title}</h4>
-                  <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{g.desc}</p>
-                </div>
+              {goals.map((g, i) => (
+                <FadeIn key={g.number} delay={i * 150}>
+                  <div className="bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700">
+                    <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 tracking-wider">
+                      {g.number}
+                    </span>
+                    <h4 className="text-base font-bold mt-2 mb-3">{g.title}</h4>
+                    <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{g.desc}</p>
+                  </div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -135,19 +135,18 @@ export default function Home() {
               강점 &amp; 의지
             </h3>
             <div className="space-y-4">
-              {strengths.map((s) => (
-                <div
-                  key={s.number}
-                  className="flex gap-6 bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700"
-                >
-                  <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 shrink-0 leading-none pt-1">
-                    {s.number}
-                  </span>
-                  <div>
-                    <h4 className="font-bold mb-2">{s.title}</h4>
-                    <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{s.desc}</p>
+              {strengths.map((s, i) => (
+                <FadeIn key={s.number} delay={i * 150}>
+                  <div className="flex gap-6 bg-white dark:bg-zinc-800 rounded-2xl p-6 border border-zinc-200 dark:border-zinc-700">
+                    <span className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 shrink-0 leading-none pt-1">
+                      {s.number}
+                    </span>
+                    <div>
+                      <h4 className="font-bold mb-2">{s.title}</h4>
+                      <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">{s.desc}</p>
+                    </div>
                   </div>
-                </div>
+                </FadeIn>
               ))}
             </div>
             <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed border-l-2 border-emerald-500 pl-4">
@@ -167,31 +166,33 @@ export default function Home() {
           </p>
           <h2 className="text-3xl font-bold mb-16">Lineup</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {members.map((m) => (
-              <div key={m.name} className="flex flex-col items-center text-center gap-5">
-                <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-zinc-100 dark:border-zinc-800 shrink-0">
-                  <Image
-                    src={m.photo}
-                    alt={`${m.name} 증명사진`}
-                    fill
-                    className="object-cover"
-                  />
+            {members.map((m, i) => (
+              <FadeIn key={m.name} delay={i * 150}>
+                <div className="flex flex-col items-center text-center gap-5">
+                  <div className="relative w-44 h-44 rounded-full overflow-hidden border-4 border-zinc-100 dark:border-zinc-800 shrink-0">
+                    <Image
+                      src={m.photo}
+                      alt={`${m.name} 증명사진`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <p className="text-xl font-bold">{m.name}</p>
+                    <span className="inline-block mt-2 px-3 py-0.5 text-xs font-semibold rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">
+                      {m.role}
+                    </span>
+                  </div>
+                  <a
+                    href={m.notion}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 transition-colors"
+                  >
+                    Notion 소개 →
+                  </a>
                 </div>
-                <div>
-                  <p className="text-xl font-bold">{m.name}</p>
-                  <span className="inline-block mt-2 px-3 py-0.5 text-xs font-semibold rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300">
-                    {m.role}
-                  </span>
-                </div>
-                <a
-                  href={m.notion}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 underline underline-offset-4 transition-colors"
-                >
-                  Notion 소개 →
-                </a>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>
